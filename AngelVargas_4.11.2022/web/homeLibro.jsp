@@ -21,12 +21,12 @@
     </head>
     <body>  
         
-        <img src="logoMiumg3.png" align="center" alt=""/>
-        <img src="cabecera.jpg" align="center" alt=""/>
-        <img src="logoMiumg2.jpg" align="center" alt=""/>
-        
+        <img src="imagenes/logoMiumg3.png" align="center" alt=""/>
+        <img src="imagenes/cabecera.jpg" align="center" alt=""/>
+        <img src="imagenes/logoMiumg2.jpg" align="center" alt=""/>
+   
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="https://www.canva.com/design/DAFRBGsJ7WY/GopQndEpzUBWSFznj2fgJA/view?utm_content=DAFRBGsJ7WY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">QUIENES SOMOS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,18 +34,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="homePrincipal.jsp">Home <span class="sr-only">(current)</span></a>
           </li>
+          
+          <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="homeLibro.jsp">Registro Libro</a>
+          </li>
+
+          <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="homeUsuario.jsp">Registro Usuario</a>
+          </li>     
+
+        
+          
+<%--          
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              MENU
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="homeLibro.jsp">Registro Libro</a>
+              
+              <a class="dropdown-item" href="homeUsuario.jsp">Registro Usuario</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
@@ -53,6 +66,8 @@
           <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li>
+          --%>
+          
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -64,34 +79,43 @@
     
     <div class="d-flex justify-content-around">
         <div class="p-3 bd-highlight">
-        <h1>Formulario de Registro de Estudiantes</h1>
+        <h1>Formulario de Registro de Libros</h1>
         <a href="NewServlet1" > Click aqui </a><br><br>
         <form method="POST" id="form" name="form" action="NewServlet1" >
+            
+            
+            
+            
             <div class="form-group">
-                <label for="exampleInputName">Codigo</label>
+                <label for="exampleInputName">Codigo Libro</label>
                 <input class="form-control" type="text" placeholder="ingresar codigo" name="codigo" id="codigo" >
                 <input type="hidden" name="control" value="GUARDAR">
             </div>
             <div class="form-group">
-                <label for="exampleInputName">Nombre del alumno</label>
+                <label for="exampleInputName">Nombre del libro</label>
                 <input class="form-control" type="text" placeholder="ingresar nombre" name="nombre" id="nombre" >
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label for="exampleInputEmail1">Tipo de pasta</label>
               <input type="email" class="form-control"  aria-describedby="emailHelp" name="correo" id="correo"  >
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Direccion</label>
+              <label for="exampleInputPassword1">Editorial</label>
               <input type="text" class="form-control"  name="direccion" id="direccion"  >
+            </div>
+            
+             <div class="form-group">
+              <label for="exampleInputTelefono">Publicacion</label>
+              <input type="text" class="form-control"  name="telefono" id="telefono"  >
             </div>
             
             <select class="form-control" name="opcion">
                 <option value="1">Opción 1</option>
                 <option value="2">Opción 2</option>
             </select><br>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <button type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success">Guardar con JS</button>
+            <%-- <button type="submit" class="btn btn-primary">Guardar</button> --%>
+            <button type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success">Guardar</button>
              <button type="button" class="btn btn-danger">Cancelar</button>
         </form>   
         </div>
@@ -100,10 +124,11 @@
                 <table class="table table-striped table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <td>Codigo de Estudiante</td>
-                            <td>Nombre del Estudiante</td>
-                            <td>Dirección</td>
-                            <td>Correo Institucional</td>
+                            <td>Codigo de Libro</td>
+                            <td>Nombre del libro</td>
+                             <td>Editorial</td>
+                            <td>Año Publicación</td>
+                            <td>Pasta </td>
                             <td>Tipo</td>
                             <td>Acción</td>
                         </tr>
